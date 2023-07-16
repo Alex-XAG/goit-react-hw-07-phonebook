@@ -2,9 +2,10 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form, Label, Input, BtnForm } from './ContactForm.styled';
-import { useAddContactMutation } from 'redux/contactSlice';
+import { useAddContactMutation, useGetContactsQuery } from 'redux/contactSlice';
 
-export const ContactForm = ({ contacts }) => {
+export const ContactForm = () => {
+  const { data: contacts } = useGetContactsQuery();
   const [addContact, { isLoading }] = useAddContactMutation();
 
   const [inputName, setInputName] = useState('');

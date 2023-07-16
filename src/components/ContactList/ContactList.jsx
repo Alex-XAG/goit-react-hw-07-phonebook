@@ -1,10 +1,14 @@
 import React from 'react';
 import { List, ItemLi, TextItem, BtnDelete } from './ContactList.styled';
 import { useSelector } from 'react-redux';
-import { useRemoveContactMutation } from 'redux/contactSlice';
+import {
+  useGetContactsQuery,
+  useRemoveContactMutation,
+} from 'redux/contactSlice';
 
-export const ContactList = ({ contacts }) => {
+export const ContactList = () => {
   const [removeContact, { isLoading }] = useRemoveContactMutation();
+  const { data: contacts } = useGetContactsQuery();
 
   const filter = useSelector(state => state.filter);
 

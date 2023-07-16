@@ -19,13 +19,13 @@ export const App = () => {
       }}
     >
       <h1>Phonebook</h1>
-      <ContactForm contacts={contacts} />
+      <ContactForm />
 
       <h2>Contacts</h2>
       <Filter />
       {isFetching && <div>Loading...</div>}
-      {contacts && <ContactList contacts={contacts} />}
-      {error && <h3>Some thing wrong my friend(((</h3>}
+      {contacts && <ContactList />}
+      {error && <h3>Something wrong my friend(((</h3>}
     </div>
   );
 };
